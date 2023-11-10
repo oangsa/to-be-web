@@ -18,7 +18,7 @@ export default function IdolRegisteration() {
       setIsRegister(true)
       return console.log(isRegister)
     }
-  }, [])
+  }, [isRegister])
 
   const getData = useCallback(async () => {
     if (!hasCookie("user-token")) return
@@ -41,7 +41,7 @@ export default function IdolRegisteration() {
       gpax: isRegister ? res?.Registeration?.Gpax : 0,
       other: isRegister ? res?.Registeration?.talent : "",
     })
-  }, [])
+  }, [isRegister])
   const [data, setData] = useState<any>({
     name: "",
     surname: "",

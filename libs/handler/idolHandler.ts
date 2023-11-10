@@ -3,8 +3,7 @@ import prisma from '@/libs/prismadb'
 
 export default async function idolSubmitHandler(reg: {name: string, surname: string, studentId: number, yearClass: number, Class: number, age: number, height: number, weight: number, gpax: number, other: string, isDrug: boolean}, auth: {username: string, password: string}) {
 
-    console.log(reg.name, reg.surname)
-
+    const msg = `message=\n<มีผู้สมัคร ทูบีนัมเบอร์วันไอดอล>\nชื่อ: ${reg.name} ${reg.surname}\nชั้น: ม.${reg.yearClass}/${reg.Class}\nอายุ: ${reg.age} ปี\nสูง: ${reg.height} ซม.\nน้ำหนัก: ${reg.weight} กก.\nเกรดเฉลี่ย: ${reg.gpax/100}\nความสามารถพิเศษ: ${reg.other}\n${reg.isDrug ? "มีประวัติการใช้สารเสพติด":"ไม่มีประวัติการใช้สารเสพติด"}`;
 
     if (reg.age > 18 || reg.age < 15) return false
     if (reg.height < 170) return false
@@ -48,6 +47,16 @@ export default async function idolSubmitHandler(reg: {name: string, surname: str
             Class: reg.Class === user?.Class ? user?.Class : reg.Class
         }
     })
+
+    const response = await fetch("https://notify-api.line.me/api/notify", {
+        mode: "cors",
+        method: 'POST',
+        headers: {
+            'Authorization': `Bearer ${process.env.LINE_TOKEN}`,
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: msg,
+    });
 
     return true
 }
