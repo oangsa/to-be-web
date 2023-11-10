@@ -1,28 +1,23 @@
 "use client"
 import { Table, TableBody, TableCell, TableColumn, TableHeader, TableRow, Pagination} from "@nextui-org/react";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import getRegList from "@/libs/getRegList";
 import { IdolRenderCell } from "./idol-render-cell";
 export const revalidate = 60
 
 export const IdolTableWrapper = () => {
   const [data, setData] = useState<any[]>([])
-  const isFirstRender = useRef(true);
+  const test = useCallback(async () => {
+    const data:any = await getRegList()
+    await setData(data)
+  }, [])
+  // const isFirstRender = useRef(true);
   const [page, setPage] = React.useState(1);
   const rowsPerPage = 10;
 
-  async function get() {
-    const data:any = await getRegList()
-    // const d: any = await data.json()
-    await setData(data)
-  }
   useEffect(() => {
-    if (isFirstRender.current) {
-      get()
-      isFirstRender.current = false;
-    } else {
-    }
-  }, [get]);
+    test()
+  }, [test]);
 
   const pages = Math.ceil(data.length / rowsPerPage);
 

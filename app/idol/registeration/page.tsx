@@ -71,7 +71,7 @@ export default function IdolRegisteration() {
       checkRegister()
       getD()
     }
-  }, [isRegister]);
+  }, []);
 
   const inputHandler = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target

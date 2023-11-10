@@ -1,28 +1,22 @@
 "use client"
 import { Table, TableBody, TableCell, TableColumn, TableHeader, TableRow, Pagination} from "@nextui-org/react";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import { RenderCell } from "./render-cell";
 import getList from "@/libs/list";
 export const revalidate = 60
 
 export const TableWrapper = () => {
   const [data, setData] = useState<any[]>([])
-  const isFirstRender = useRef(true);
   const [page, setPage] = React.useState(1);
+  const test = useCallback(async () => {
+    const data:any = await getList()
+    await setData(data)
+  }, [])
   const rowsPerPage = 10;
 
-  async function get() {
-    const data:any = await getList()
-    // const d: any = await data.json()
-    await setData(data)
-  }
   useEffect(() => {
-    if (isFirstRender.current) {
-      get()
-      isFirstRender.current = false;
-    } else {
-    }
-  }, [get]);
+    test()
+  }, [test]);
 
   const pages = Math.ceil(data.length / rowsPerPage);
 
