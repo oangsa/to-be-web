@@ -3,7 +3,7 @@
 import getDataByCookie from "@/libs/getDataByCookie";
 import { Button, Card, CardBody, CardHeader, Checkbox, Input, Spacer } from "@nextui-org/react";
 import hasCookie from "@/libs/hasCookie";
-import { ChangeEvent, useEffect, useRef, useState } from "react";
+import { ChangeEvent, useCallback, useEffect, useRef, useState } from "react";
 import Swal from "sweetalert2";
 import idolSubmitHandler from "@/libs/handler/idolHandler";
 
@@ -11,35 +11,16 @@ export default function IdolRegisteration() {
   const [isClicked, setIsClicked] = useState<boolean>(false);
   const [isSelected, setIsSelected] = useState<boolean>(false);
   const [isRegister, setIsRegister] = useState<boolean>(false);
-  const [data, setData] = useState<any>({
-    name: "",
-    surname: "",
-    studentId: 0,
-    yearClass: 0,
-    Class: 0,
-    age: 0,
-    height: 0,
-    weight: 0,
-    gpax: 0,
-    other: "",
-  });
-
-  const [loginData, setLoginData] = useState<any>({
-    username: "",
-    password: ""
-  }) 
-
-  const checkRegister = async () => {
+  const checkRegister = useCallback(async () => {
     if (!hasCookie("user-token")) return
     const res = await getDataByCookie()
     if (res?.Registeration !== null) {
       setIsRegister(true)
       return console.log(isRegister)
     }
-  }
+  }, [])
 
-
-  const getD = async () => {
+  const getData = useCallback(async () => {
     if (!hasCookie("user-token")) return
     const res = await getDataByCookie()
     const isDrug = res?.Registeration?.isDrug as boolean
@@ -60,18 +41,29 @@ export default function IdolRegisteration() {
       gpax: isRegister ? res?.Registeration?.Gpax : 0,
       other: isRegister ? res?.Registeration?.talent : "",
     })
-  }
-  const isFirstRender = useRef(true);
+  }, [])
+  const [data, setData] = useState<any>({
+    name: "",
+    surname: "",
+    studentId: 0,
+    yearClass: 0,
+    Class: 0,
+    age: 0,
+    height: 0,
+    weight: 0,
+    gpax: 0,
+    other: "",
+  });
+
+  const [loginData, setLoginData] = useState<any>({
+    username: "",
+    password: ""
+  }) 
 
   useEffect(() => {
-    if (isFirstRender.current) {
-      isFirstRender.current = false;
-    } else {
-      console.log("fetching");
-      checkRegister()
-      getD()
-    }
-  });
+    checkRegister()
+    getData()
+  }, [checkRegister, getData]);
 
   const inputHandler = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target

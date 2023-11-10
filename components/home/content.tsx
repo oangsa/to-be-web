@@ -1,5 +1,5 @@
 "use client"
-import React, { useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import { Card, CardBody, Link } from "@nextui-org/react";
 import { UsetageCard } from "./usetageCard";
@@ -16,6 +16,9 @@ const Chart = dynamic(
 
 export const Content = () => {
   const [data, setData] = useState<any>()
+  const getData = useCallback(async () => {
+    await getD()
+  }, [])
 
   const getD = async () => {
     if (!hasCookie("user-token")) return
@@ -25,13 +28,8 @@ export const Content = () => {
   const isFirstRender = useRef(true);
 
   useEffect(() => {
-    if (isFirstRender.current) {
-      isFirstRender.current = false;
-    } else {
-      console.log("fetching");
-      getD()
-    }
-  }, []);
+    getData()
+  }, [getData]);
   
   return (
     <div className=" h-full">

@@ -14,23 +14,23 @@ export default function ChangeLog() {
                         <>
                             <ModalHeader>
                                 <span id="modal-title" className="text-lg">
-                                    เวอร์ชั่น: 2.0.0
+                                    เวอร์ชั่น: 3.0.0
                                 </span>
                             </ModalHeader>
                             <ModalBody>
                                 <span>
-                                    ⌛ อัพเดตล่าสุด 9 ก.ค. 2566
+                                    ⌛ อัพเดตล่าสุด 11 พ.ย. 2566
                                 </span>
                                 <span>
-                                    - Revamp UI
+                                    - Re-Factor Code
                                 </span>
                                 <span>
-                                    - Update Database
+                                    - To Be Number One Idol 2023 Registeration System Added.
                                 </span>
                             </ModalBody>
                             <ModalFooter>
                                 <span className="text-xs">
-                                    Developed With ❤️ By: To Be Number One Club`&apos;`s Developer Team.
+                                    Developed With ❤️ By: To Be Number One Club&apos;s Developer Team.
                                 </span>
                             </ModalFooter>
                             <ModalFooter>
