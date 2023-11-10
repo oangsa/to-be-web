@@ -5,6 +5,7 @@ import React from 'react'
 import { NextUIProvider} from '@nextui-org/react';
 import {Layout} from "@/components/layout/layout"
 import Head from 'next/head';
+import { Analytics } from '@vercel/analytics/react';
 
 const kanit = Kanit({ subsets: ['latin', 'thai'], weight: '400' })
 
@@ -22,6 +23,7 @@ export default function RootLayout({
           <NextUIProvider>
             <Layout>
               {children}
+              <Analytics/>
             </Layout>
           </NextUIProvider>
         </body>

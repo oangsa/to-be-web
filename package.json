@@ -12,6 +12,7 @@
     "@nextui-org/react": "^2.2.6",
     "@prisma/client": "^5.5.2",
     "@types/jwt-decode": "^3.1.0",
+    "@vercel/analytics": "^1.1.1",
     "aws4": "^1.12.0",
     "child_process": "^1.0.2",
     "cookies-next": "^4.0.0",
