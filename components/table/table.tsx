@@ -1,5 +1,5 @@
 "use client"
-import { Link, Table, TableBody, TableCell, TableColumn, TableHeader, TableRow, Pagination} from "@nextui-org/react";
+import { Table, TableBody, TableCell, TableColumn, TableHeader, TableRow, Pagination} from "@nextui-org/react";
 import React, { useEffect, useRef, useState } from "react";
 import { RenderCell } from "./render-cell";
 import getList from "@/libs/list";

@@ -1,8 +1,8 @@
 import React, {ChangeEvent, useState} from 'react'
-import { ModalHeader, ModalFooter, ModalBody, useDisclosure, ModalContent } from "@nextui-org/react";
+import { ModalFooter, ModalBody, useDisclosure, ModalContent } from "@nextui-org/react";
 import { Modal, Button, Input, Spacer } from "@nextui-org/react";
 import Swal from 'sweetalert2';
-import { Inter, Kanit } from 'next/font/google'
+import { Kanit } from 'next/font/google'
 import sendData from '@/libs/handler/sendData';
 const kanit = Kanit({ subsets: ['latin', 'thai'], weight: '400' })
 

@@ -1,7 +1,5 @@
 import {Card, CardBody} from '@nextui-org/react';
 import React, { useEffect, useState } from 'react';
-import { useRouter } from 'next/navigation';
-import { CookieValueTypes, getCookie } from 'cookies-next';
 import hasCookie from '@/libs/hasCookie';
 
 export const UsetageCard = (props:any) => {

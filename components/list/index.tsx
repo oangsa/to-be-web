@@ -1,13 +1,8 @@
-import { Button, Input } from "@nextui-org/react";
+import { Input } from "@nextui-org/react";
 import Link from "next/link";
 import React from "react";
-import { DotsIcon } from "../icons/accounts/dots-icon";
-import { ExportIcon } from "../icons/accounts/export-icon";
-import { InfoIcon } from "../icons/accounts/info-icon";
-import { TrashIcon } from "../icons/accounts/trash-icon";
 import { HouseIcon } from "../icons/breadcrumb/house-icon";
 import { UsersIcon } from "../icons/breadcrumb/users-icon";
-import { SettingsIcon } from "../icons/sidebar/settings-icon";
 import { TableWrapper } from "../table/table";
 import { AddStudent } from "./add-student";
 

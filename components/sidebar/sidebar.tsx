@@ -1,20 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { Sidebar } from "./sidebar.styles";
-import { Avatar, Tooltip, Image } from "@nextui-org/react";
-import { CompaniesDropdown } from "./companies-dropdown";
+import { Image } from "@nextui-org/react";
 import { HomeIcon } from "../icons/sidebar/home-icon";
 import { AccountsIcon } from "../icons/sidebar/accounts-icon";
-import { SettingsIcon } from "../icons/sidebar/settings-icon";
-import { CollapseItems } from "./collapse-items";
 import { SidebarItem } from "./sidebar-item";
 import { SidebarMenu } from "./sidebar-menu";
-import { FilterIcon } from "../icons/sidebar/filter-icon";
 import { useSidebarContext } from "../layout/layout-context";
 import { useRouter, usePathname } from "next/navigation";
-import { DashboardIcon } from "../icons/sidebar/dashboard-icon";
 import { BiSolidMedal } from 'react-icons/bi';
 import ChangeLog from "./changeLog";
-import Logo from "../../public/Logo.png"
 import { getCookie } from "cookies-next";
 import * as jwt_decode from 'jwt-decode';
 export const SidebarWrapper = () => {

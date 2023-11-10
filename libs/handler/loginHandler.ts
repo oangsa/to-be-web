@@ -3,7 +3,7 @@ import prisma from '@/libs/prismadb'
 import { SignJWT } from 'jose'
 import { nanoid } from 'nanoid'
 import { getJwtSecretKey } from '../auth'
-import { getCookies, getCookie, setCookie, deleteCookie } from 'cookies-next';
+import { setCookie } from 'cookies-next';
 
 export default async function loginHandler(username: string, password: string) {
     // const dbUrl = process.env.old_db as string

@@ -2,7 +2,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import { Card, CardBody, Link } from "@nextui-org/react";
-import NextLink from "next/link";
 import { UsetageCard } from "./usetageCard";
 import { GreetCard } from "./greetCard";
 import getDataByCookie from "@/libs/getDataByCookie";
