@@ -19,13 +19,13 @@ export default function ChangeLog() {
                             </ModalHeader>
                             <ModalBody>
                                 <span>
-                                    ⌛ อัพเดตล่าสุด 11 พ.ย. 2566
+                                    ⌛ อัพเดตล่าสุด 13 พ.ย. 2566
                                 </span>
                                 <span>
-                                    - Re-Factor Code
+                                    - Fix bugs.
                                 </span>
                                 <span>
-                                    - To Be Number One Idol 2023 Registeration System Added.
+                                    - Add more bugs to fix.
                                 </span>
                             </ModalBody>
                             <ModalFooter>

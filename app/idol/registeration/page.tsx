@@ -155,7 +155,7 @@ export default function IdolRegisteration() {
               <Input onInput={inputHandler} type="text" value={data.other} fullWidth name='other' label='ความสมารถพิเศษ' placeholder="ร้องเพลงได้, เต้นได้, อื่นๆ" />
             </div>
             <div className="lg:flex lg:gap-12">
-              <Checkbox name="isDrug" isSelected={isSelected} onValueChange={setIsSelected}>มีประวัติการติดสารเสพติดมาก่อนหรือไม่?</Checkbox>
+              <Checkbox name="isDrug" isSelected={isSelected} onValueChange={setIsSelected}>ท่านมีประวัติการยุ่งเกี่ยวกับสารเสพติดมาก่อนหรือไม่?</Checkbox>
             </div>
             <Spacer y={1} />
             <span className="text-xs text-red-500">* คำเตือน เมื่อกดยืนยันแล้วข้อมูลจะส่งทันที</span>
