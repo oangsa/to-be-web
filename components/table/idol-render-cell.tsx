@@ -1,5 +1,7 @@
-import { User } from "@nextui-org/react";
+import { Tooltip, User } from "@nextui-org/react";
 import React from "react";
+import { DeleteIcon } from "../icons/table/delete-icon";
+import idolDeleteUser from "@/libs/user/deleteIdolUser";
 
 
 export const IdolRenderCell = ({ user, columnKey }: any) => {
@@ -20,9 +22,9 @@ export const IdolRenderCell = ({ user, columnKey }: any) => {
     case "class":
         return (
             <div>
-            <div>
-                <span>ม. {user.student.yearClass}/{user.student.Class}</span>
-            </div>
+              <div>
+                  <span>ม. {user.student.yearClass}/{user.student.Class}</span>
+              </div>
             </div>
         );
     
@@ -30,10 +32,26 @@ export const IdolRenderCell = ({ user, columnKey }: any) => {
         return (
             <div>
                 <div>
-                    <span>{user.isDrug ? "✅" : "❌"}</span>
+                    <span className="flex items-center">{user.isDrug ? "✅" : "❌"}</span>
                 </div>
             </div>
-        );
+    );
+
+    case "actions":
+      return (
+        <div className="flex items-center">
+          <div>
+            <Tooltip
+              content={"Delete"}
+              color="danger"
+            >
+              <button onClick={() => idolDeleteUser(user.student.studentId)}>
+                <DeleteIcon size={20} fill="#FF0080" />
+              </button>
+            </Tooltip>
+          </div>
+        </div>
+      );
 
     default:
       return cellValue;

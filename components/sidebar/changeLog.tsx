@@ -14,18 +14,18 @@ export default function ChangeLog() {
                         <>
                             <ModalHeader>
                                 <span id="modal-title" className="text-lg">
-                                    เวอร์ชั่น: 3.0.0
+                                    เวอร์ชั่น: 3.0.2
                                 </span>
                             </ModalHeader>
                             <ModalBody>
                                 <span>
-                                    ⌛ อัพเดตล่าสุด 13 พ.ย. 2566
+                                    ⌛ อัพเดตล่าสุด 14 พ.ย. 2566
                                 </span>
                                 <span>
-                                    - Fix bugs.
+                                    - Add Delete user function to backend.
                                 </span>
                                 <span>
-                                    - Add more bugs to fix.
+                                    - Drink more coffee.
                                 </span>
                             </ModalBody>
                             <ModalFooter>

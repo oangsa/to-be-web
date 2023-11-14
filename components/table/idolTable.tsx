@@ -38,7 +38,8 @@ export const IdolTableWrapper = () => {
     {uid: 'Weight', name: 'น้ำหนัก'},
     {uid: 'Gpax', name: 'เกรดเฉลี่ย'},
     {uid: 'talent', name: 'ความสามารถพิเศษ'},
-    {uid: 'isDrug', name: 'ติดยา'},
+    {uid: 'isDrug', name: 'มีประวัติยุ่งเกี่ยวกับสารเสพติด'},
+    {uid: 'actions', name: 'ลบรายชื่อ'},
 
   ]
 
@@ -65,7 +66,6 @@ export const IdolTableWrapper = () => {
           {(column) => (
             <TableColumn
               key={column.uid}
-              hideHeader={column.uid === "actions"}
               align={column.uid === "actions" ? "center" : "start"}
             >
               {column.name}
