@@ -1,4 +1,4 @@
-import { Modal, useModal, Button, ModalHeader, ModalFooter, ModalBody, useDisclosure, ModalContent } from "@nextui-org/react";
+import { Modal, Button, ModalHeader, ModalFooter, ModalBody, useDisclosure, ModalContent } from "@nextui-org/react";
 import { SidebarItem } from "./sidebar-item";
 import {ChangeLogIcon} from '../icons/sidebar/changelog-icon';
 
@@ -14,18 +14,18 @@ export default function ChangeLog() {
                         <>
                             <ModalHeader>
                                 <span id="modal-title" className="text-lg">
-                                    เวอร์ชั่น: 3.0.2
+                                    เวอร์ชั่น: 3.0.3
                                 </span>
                             </ModalHeader>
                             <ModalBody>
                                 <span>
-                                    ⌛ อัพเดตล่าสุด 14 พ.ย. 2566
+                                    ⌛ อัพเดตล่าสุด 22 พ.ย. 2566
                                 </span>
                                 <span>
-                                    - Add Delete user function to backend.
+                                    - Fix UX.
                                 </span>
                                 <span>
-                                    - Drink more coffee.
+                                    - Maybe, life is not forever.
                                 </span>
                             </ModalBody>
                             <ModalFooter>

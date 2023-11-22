@@ -50,7 +50,7 @@ export const NavbarWrapper = ({ children }: Props) => {
         </NavbarContent>
         <NavbarContent className="w-full max-md:hidden justify-center">
           <Button disabled size="sm" color='primary'>ประกาศ <FeedbackIcon/></Button>
-          รับสมัคร To Be Number One Idol ปีการศึกษา 2566 ตั้งแต่วันนี้ ถึง 25 ธ.ค 2566
+          รับสมัคร To Be Number One Idol ปีการศึกษา 2566 ตั้งแต่วันนี้ ถึง 28 ธ.ค 2566
         </NavbarContent>
         <NavbarContent
           justify="end"
