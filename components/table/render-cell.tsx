@@ -3,12 +3,17 @@ import React from "react";
 import { DeleteIcon } from "../icons/table/delete-icon";
 import { EditIcon } from "../icons/table/edit-icon";
 import { EyeIcon } from "../icons/table/eye-icon";
-
+import { confirmDelete } from "../modals/deleteStudent";
+import { EditStudentAdmin } from "../modals/editStudentAdmin";
 
 export const RenderCell = ({ user, columnKey }: any) => {
   // @ts-ignore
   const cellValue = user[columnKey];
-  // console.log(columnKey)
+  const studentId: number = user.studentId
+  const del = async () => {
+    confirmDelete(user.studentId)
+    return setTimeout(() => window.location.reload(), 2020)
+  }
   switch (columnKey) {
     case "studentId":
       return (
@@ -33,26 +38,11 @@ export const RenderCell = ({ user, columnKey }: any) => {
       return (
         <div className="flex items-center gap-4 ">
           <div>
-            <Tooltip content="Details">
-              <button onClick={() => console.log("View user", user.studentId)}>
-                <EyeIcon size={20} fill="#979797" />
-              </button>
-            </Tooltip>
+            <EditStudentAdmin sid={studentId}/>
           </div>
           <div>
-            <Tooltip content="Edit user" color="secondary">
-              <button onClick={() => console.log("Edit user", user.studentId)}>
-                <EditIcon size={20} fill="#979797" />
-              </button>
-            </Tooltip>
-          </div>
-          <div>
-            <Tooltip
-              content="Delete user"
-              color="danger"
-              onClick={() => console.log("Delete user", user.studentId)}
-            >
-              <button>
+            <Tooltip content={"Delete"} color="danger">
+              <button onClick={() => del()}>
                 <DeleteIcon size={20} fill="#FF0080" />
               </button>
             </Tooltip>

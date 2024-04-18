@@ -29,24 +29,23 @@ export default function LOginModal() {
     const [isClicked, setIsClicked] = useState<boolean>(false);
 
     const submit = async () => {
-
-    const Toast = Swal.mixin({
-        toast: true,
-        position: 'top-right',
-        customClass: {
-          popup: 'colored-toast'
-        },
-        showConfirmButton: false,
-        timer: 3000,
-        timerProgressBar: true
-    })
-    setIsClicked(true)
-    // console.log(await loginHandler(data.username, data.password))
-    const res = await loginHandler(data.username, data.password)
-    if (res === null) {
-      setIsClicked(false)
-    //   setVisible(false);
-      return Toast.fire({ icon: 'error', title: 'Username or Password is invalid.' })
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-right',
+            customClass: {
+            popup: 'colored-toast'
+            },
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true
+        })
+        setIsClicked(true)
+        // console.log(await loginHandler(data.username, data.password))
+        const res = await loginHandler(data.username, data.password)
+        if (res === null) {
+        setIsClicked(false)
+        //   setVisible(false);
+        return Toast.fire({ icon: 'error', title: 'Username or Password is invalid.' })
     }
     
 

@@ -1,6 +1,6 @@
 import { getCookie } from "cookies-next"
 import * as jwt_decode from 'jwt-decode';
-import getuserbysid from "./getUserBysid"
+import getuserbysid from "./getIdolBysid"
 
 export default async function getDataByCookie() {
     const s: any = getCookie('user-token') 

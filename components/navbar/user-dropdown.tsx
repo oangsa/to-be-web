@@ -2,6 +2,7 @@ import { Avatar, Dropdown, DropdownItem, DropdownMenu, DropdownTrigger, NavbarIt
 import React from "react";
 import { usePathname, useRouter } from 'next/navigation';
 import { deleteCookie } from "cookies-next";
+import Swal from "sweetalert2";
 interface props {
   image: string,
   name: string
@@ -15,9 +16,20 @@ export const UserDropdown = ({image, name}: props) => {
   if ( image === 'url' || image === '' ) url = 'https://i.pravatar.cc/150?u=a042581f4e29026704d'
 
   async function logoutClicked() {
-    deleteCookie("user-token")
-    setTimeout(() => window.location.reload(), 1000)
-    return
+    Swal.fire({
+      title: 'ยืนยันที่จะลงชื่อออก?',
+      icon: 'warning',
+      showCancelButton: true ,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'ใช่'
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        deleteCookie("user-token")
+        setTimeout(() => window.location.reload(), 1000)
+        return
+      }
+    })
  }
 
   return (

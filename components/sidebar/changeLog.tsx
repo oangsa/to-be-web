@@ -14,18 +14,27 @@ export default function ChangeLog() {
                         <>
                             <ModalHeader>
                                 <span id="modal-title" className="text-lg">
-                                    เวอร์ชั่น: 3.0.3
+                                    Version: 4.0.0
                                 </span>
                             </ModalHeader>
                             <ModalBody>
                                 <span>
-                                    ⌛ อัพเดตล่าสุด 22 พ.ย. 2566
+                                    ⌛ Lastest Update April 18th, 2024
                                 </span>
                                 <span>
-                                    - Fix UX.
+                                    - Setting Tab Added.
                                 </span>
                                 <span>
-                                    - Maybe, life is not forever.
+                                    - Adding Student button for Admin Added.
+                                </span>
+                                <span>
+                                    - Student Configuration Tab in Student list Added.
+                                </span>
+                                <span>
+                                    - Improved overall UX
+                                </span>
+                                <span className="text-orange-500">
+                                    - Wait!, KMUTT?...., Great!, Wish me luck!!!
                                 </span>
                             </ModalBody>
                             <ModalFooter>

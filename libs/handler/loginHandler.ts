@@ -4,9 +4,12 @@ import { SignJWT } from 'jose'
 import { nanoid } from 'nanoid'
 import { getJwtSecretKey } from '../auth'
 import { setCookie } from 'cookies-next';
+import { studentData } from '@/type'
 
 export default async function loginHandler(username: string, password: string) {
     // const dbUrl = process.env.old_db as string
+    console.log("Triggered")
+    console.log(username)
     const thirtydays = 30 * 24 * 60 * 60 * 1000
     var isAdmin = false
     if (username === "admin" && password === "password") isAdmin = true
@@ -15,20 +18,8 @@ export default async function loginHandler(username: string, password: string) {
             username: username,
             password: password
         }
-    })
+    }) as studentData
     if (!user) return null
-    console.log(user)
-    const token = await new SignJWT({})
-            .setProtectedHeader({ alg: 'HS256', studentId: user.studentId , username: user.username, password: user.password, isAdmin: isAdmin === true ? true : false })
-            .setJti(nanoid())
-            .setExpirationTime('30 days')
-            .sign(new TextEncoder().encode(getJwtSecretKey()))
-
-    try {
-        setCookie('user-token', token, { maxAge: thirtydays })
-    } catch (err) {
-        console.log(err)
-    }
     
 
     return user

@@ -6,13 +6,13 @@ import { AccountsIcon } from "../icons/sidebar/accounts-icon";
 import { SidebarItem } from "./sidebar-item";
 import { SidebarMenu } from "./sidebar-menu";
 import { useSidebarContext } from "../layout/layout-context";
-import { useRouter, usePathname } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { BiSolidMedal } from 'react-icons/bi';
 import ChangeLog from "./changeLog";
 import { getCookie } from "cookies-next";
 import * as jwt_decode from 'jwt-decode';
+import { SettingsIcon } from "../icons/sidebar/settings-icon";
 export const SidebarWrapper = () => {
-  const router = useRouter();
   const pathname = usePathname()
   const { collapsed, setCollapsed } = useSidebarContext();
   const [isAdmin, setIsAdmin] = useState<boolean>(false)
@@ -53,27 +53,21 @@ export const SidebarWrapper = () => {
                   isActive={pathname === '/'}
                   href="/"
                 />
-                {/* {isCookie && <SidebarItem
+                {isCookie && <SidebarItem
                   isActive={pathname === '/setting'}
                   title="ตั้งค่า"
                   icon={<SettingsIcon />}
                   href='/setting'
-                />} */}
-                {/* <SidebarItem
-                  isActive={pathname === '/chat'}
-                  title="แชท"
-                  icon={<ChatIcon />}
-                  href='/chat'
-                /> */}
+                />}
             </SidebarMenu>
 
             {isCookie && <SidebarMenu title="กิจกรรม">
-                <SidebarItem
+                {/* <SidebarItem
                   title="ทูบีนัมเบอร์วัน ไอดอล"
                   icon={<BiSolidMedal width="24" height="24" />}
                   isActive={pathname === '/idol/registeration'}
                   href="/idol/registeration"
-                />
+                /> */}
             </SidebarMenu>}
             
             {isAdmin && <SidebarMenu title="แอดมิน">

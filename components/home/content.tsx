@@ -49,7 +49,7 @@ export const Content = () => {
           </div>
           <Card>
             <CardBody className="p-5">
-              <p>{">"} รับสมัคร To Be Number One Idol ปีการศึกษา 2566 ตั้งแต่วันนี้ ถึง 28 ธ.ค 2566 <Link href="/idol/registeration">สมัคร </Link></p> 
+              <p>{">"} สามารถติดตามข่าวสาร และกิจกรรมดีๆ ได้ที่ <Link href="https://www.facebook.com/profile.php?id=100063686794660">Facebook </Link></p> 
             </CardBody>
           </Card>
         </div>
