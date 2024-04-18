@@ -13,7 +13,7 @@ import { setCookie } from 'cookies-next';
 import { EyeFilledIcon } from '@/components/icons/navbar/EyeFilledIcon';
 import { EyeSlashFilledIcon } from '@/components/icons/navbar/EyeSlashFilledIcon';
 
-export default function settings() {
+export default function Settings() {
   const thirtydays = 30 * 24 * 60 * 60 * 1000
   const [data, setData] = useState<studentData>({
     id: "",

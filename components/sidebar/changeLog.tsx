@@ -39,7 +39,7 @@ export default function ChangeLog() {
                             </ModalBody>
                             <ModalFooter>
                                 <span className="text-xs">
-                                    Developed With ❤️ By: To Be Number One Club&apos;s Developer Team.
+                                    Developed With ❤️ By: Suthang Sukrueangkun.
                                 </span>
                             </ModalFooter>
                             <ModalFooter>
